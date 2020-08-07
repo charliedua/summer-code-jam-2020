@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock styles %}
+
+{% block content %}
+    <p id="homepage-content">
+        About us
+    </p>
+    <table>
+        <tr>
+        <td><font size=5>w<font size=3>elcome, one and all, to my humble web abode! albatrosses hub is a fun website where you can spend your time playing mafia game
+        or discussing about something in the forum. you also can access some hot news by using
+        the newsletter feature</td> 
+        <td><img class="one" src="/static/img/albatrosses-logo.png" alt=" " width="300" height="300"></td>
+        </tr>
+        </table>
+{% endblock content %}
