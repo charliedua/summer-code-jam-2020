@@ -47,3 +47,13 @@ jobs:
               run: |
                   cd acceptable-albatrosses
                   pipenv run black albatrosses_hub --check -l 119
+
+    testing:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Unit testing
+              run:
+                  cd acceptable-albatrosses
+                  python manage.py test .
