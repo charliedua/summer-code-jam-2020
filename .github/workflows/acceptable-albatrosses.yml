@@ -55,5 +55,5 @@ jobs:
             - uses: actions/checkout@v2
             - name: Unit testing
               run: |
-                  cd acceptable-albatrosses
+                  cd acceptable-albatrosses/albatrosses_hub
                   python manage.py test .
