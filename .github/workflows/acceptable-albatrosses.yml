@@ -53,6 +53,19 @@ jobs:
 
         steps:
             - uses: actions/checkout@v2
+            - name: Set up Python 3.8
+              uses: actions/setup-python@v2
+              with:
+                  python-version: 3.8
+            - name: Install dependencies and setup
+              env:
+                  DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+              run: |
+                  python -m pip install --upgrade pip
+                  python -m pip install pipenv
+                  cd acceptable-albatrosses
+                  echo DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY > .env
+                  pipenv install --dev
             - name: Unit testing
               run: |
                   cd acceptable-albatrosses/albatrosses_hub
